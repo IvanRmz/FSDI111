@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,height=device.height , initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="../css/styleItem.css"> -->
+</head>
+<body>
+
+    <div class="item" id="item">
+        <img id="itemImg" src="" alt="img">
+        <h3 id="itemName"></h3>
+        <h4 id="itemPrice"></h4>
+        <div id="itemPicker">
+            <button id="pickerDecrease">-</button>
+            <p id=pickerAmount>0</p>
+            <button id="pickerIncrease">+</button>
+        </div>
+        <h4 id="itemTotal"></h4>
+        <button id="btnBuy">Buy</button>
+    </div>
+
+    <script type="text/javascript" src="{{url_for('static', filename='js/item.js')}}"></script>
+</body>
+</html>

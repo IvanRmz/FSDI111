@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalog</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styleCatalog.css') }}">
+</head>
+<body>
+    <button type="submit">Buy cart <span style="width: 20px; background-color: antiquewhite;">0</span></button>
+    <h1>Catalog</h1>
+    <div class="container" id="container">
+        <form action="/catalog?method=DETAILS" method="post" class="item" id="item">
+            <input type="hidden" name="id" id="itemId">
+            <img id="itemImg" src="" alt="">
+            <h3 id="itemName"></h3>
+            <h4 id="itemPrice"></h4>
+            <input type="submit" id="btnSeeMore" value="See more">
+        </form>
+        <div id="message"></div>
+    </div>
+
+    <script type="text/javascript" src="{{url_for('static', filename='js/catalog.js')}}"></script>
+    <script type="text/javascript">
+        setValues('{{ data | safe }}')
+    </script>
+</body>
+</html>

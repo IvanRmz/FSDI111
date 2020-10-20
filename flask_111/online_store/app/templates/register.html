@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Product</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styleRegister.css') }}">
+
+</head>
+<body>
+    <strong><nav>
+        <ul class="menu">
+          <li><a href="{{ url_for('registration_products') }}">Register</a></li>
+          <li><a href="{{ url_for('products') }}">Products</a></li>
+        </ul>
+      </nav></strong>
+    <h1>Products registration</h1>
+    <form action="/products/register" method="post" onsubmit="return verifyInputs()" required>
+        <p>
+            <label for="id">Id:</label>
+            <input id="id" type="text" name="id" readonly>
+        </p>
+        <p>
+            <label for="name">Name:</label>
+            <input id="name" type="text" name="name">
+        </p>
+        <p>
+            <label for="category">Category:</label>
+            <input id="category" type="text" name="category">
+        </p>
+        <p>
+            <label for="price">Price:</label>
+            <input id="price" type="number" name="price" step="0.01">
+        </p>
+        <p>
+            <label for="stock">Stock:</label>
+            <input id="stock" type="number" name="stock">
+        </p>
+        <p>
+            <label for="image">Image:</label>
+            <input id="image" type="text" name="image">
+        </p>
+        <p>
+            <input type="submit" value="Register">
+        </p>
+    </form>  
+    
+    <script type="text/javascript" src="{{url_for('static', filename='js/register.js')}}"></script>
+    <script type="text/javascript">
+        setValues('{{ data | safe }}')
+     </script>
+</body>
+</html>

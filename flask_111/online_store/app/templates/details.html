@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styleDetails.css') }}">
+</head>
+<body>
+    <form action="" method="post">
+        <input type="hidden" name="id" id="id">
+        <h1 id="name"></h1>
+        <img id="image" src="" alt="img">
+        <h3 id="description"></h3>
+        <h4 id="stock"></h4>
+        <h4 id="price"></h4>
+        <div id="itemPicker">
+            <button type="button" id="pickerDecrease">-</button>
+            <input type="number" id=pickerAmount name="amount" value="1">
+            <button type="button" id="pickerIncrease">+</button>
+        </div>
+        <h3 id="total"></h3>
+        <input type="submit" value="Add to cart">
+    </form>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/details.js') }}"></script>
+    <script type="text/javascript">
+        setData('{{ data | safe }}')
+     </script>
+</body>
+</html>
